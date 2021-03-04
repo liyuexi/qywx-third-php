@@ -13,43 +13,43 @@ class QywxThird
 
     const BASE_URL = "https://qyapi.weixin.qq.com/cgi-bin/";
     //服务商相关
-    const SERVICE_URL = BASE_URL+"service/";
-    const SUITE_TOKEN_URL = SERVICE_URL+"get_suite_token";
-    const PRE_AUTH_CODE_URL = SERVICE_URL+"get_pre_auth_code?suite_access_token=%s";
-    const PERMANENT_CODE_URL = SERVICE_URL+"get_permanent_code?suite_access_token=%s";
-    const SESSION_INFO_URL = SERVICE_URL+"set_session_info?suite_access_token=%s";
+    const SERVICE_URL = self::BASE_URL."service/";
+    const SUITE_TOKEN_URL = self::SERVICE_URL."get_suite_token";
+    const PRE_AUTH_CODE_URL = self::SERVICE_URL."get_pre_auth_code?suite_access_token=%s";
+    const PERMANENT_CODE_URL = self::SERVICE_URL."get_permanent_code?suite_access_token=%s";
+    const SESSION_INFO_URL = self::SERVICE_URL."set_session_info?suite_access_token=%s";
 
     const INSTALL_URL = "https://open.work.weixin.qq.com/3rdapp/install?suite_id=%s&pre_auth_code=%s&redirect_uri=%s&state=_state";
-    const PROVIDER_TOKEN_ULR = SERVICE_URL+"get_provider_token";
-    const REGISTER_CODE_URL = SERVICE_URL+ "get_register_code?provider_access_token=%s";
+    const PROVIDER_TOKEN_ULR = self::SERVICE_URL."get_provider_token";
+    const REGISTER_CODE_URL = self::SERVICE_URL. "get_register_code?provider_access_token=%s";
     const REGISTER_URL = "https://open.work.weixin.qq.com/3rdservice/wework/register?register_code=%s";
     const SSO_AUTH_URL = "https://open.work.weixin.qq.com/wwopen/sso/3rd_qr_connect?appid=%s&redirect_uri=%s&state=%s&usertype=%s";
-    const LOGIN_INFO_URL = SERVICE_URL+"get_login_info?access_token=%s";
+    const LOGIN_INFO_URL = self::SERVICE_URL."get_login_info?access_token=%s";
     //通讯录转译
-    const CONTACT_UPLOAD_URL = SERVICE_URL+"media/upload?provider_access_token=%s&type=%s";
-    const CONTACT_TRANS_URL = SERVICE_URL + "contact/id_translate?provider_access_token=%s";
-    const TRANS_RESULT_URL = service_url + "batch/getresult?provider_access_token=%s&jobid=%s";
+    const CONTACT_UPLOAD_URL = self::SERVICE_URL."media/upload?provider_access_token=%s&type=%s";
+    const CONTACT_TRANS_URL = self::SERVICE_URL. "contact/id_translate?provider_access_token=%s";
+    const TRANS_RESULT_URL = self::SERVICE_URL. "batch/getresult?provider_access_token=%s&jobid=%s";
     //公司相关
-    const CORP_TOKEN_URL = service_url+"get_corp_token?suite_access_token=%s";
-    const DEPARTMENT_URL = BASE_URL+"department/list?access_token=%s";
-    const USER_SIMPLELIST_URL = BASE_URL+"user/simplelist?access_token=%s&department_id=%s&fetch_child=%s";
-    const USER_DETAIL_URL = BASE_URL+"user/get?access_token={access_token}&userid={user_id}";
+    const CORP_TOKEN_URL = self::SERVICE_URL."get_corp_token?suite_access_token=%s";
+    const DEPARTMENT_URL =self::BASE_URL."department/list?access_token=%s";
+    const USER_SIMPLELIST_URL =self::BASE_URL."user/simplelist?access_token=%s&department_id=%s&fetch_child=%s";
+    const USER_DETAIL_URL =self::BASE_URL."user/get?access_token={access_token}&userid={user_id}";
     //外部联系人
     //获取配置了客户联系功能的成员列表 https://work.weixin.qq.com/api/doc/90001/90143/92576
-    const EXT_CONTACT_FOLLOW_USER_LIST_URL = BASE_URL+"externalcontact/get_follow_user_list?access_token=%s";
+    const EXT_CONTACT_FOLLOW_USER_LIST_URL =self::BASE_URL."externalcontact/get_follow_user_list?access_token=%s";
     //获取客户列表 https://work.weixin.qq.com/api/doc/90001/90143/92264
-    const EXT_CONTACT_LIST_URL = BASE_URL+"externalcontact/list?access_token=%s&userid=%s";
+    const EXT_CONTACT_LIST_URL =self::BASE_URL."externalcontact/list?access_token=%s&userid=%s";
     //获取客户群列表 https://work.weixin.qq.com/api/doc/90001/90143/93414
-    const EXT_CONTACT_GROUPCHAT_URL = BASE_URL+"externalcontact/groupchat/list?access_token=%s";
+    const EXT_CONTACT_GROUPCHAT_URL =self::BASE_URL."externalcontact/groupchat/list?access_token=%s";
     //消息推送
-    const MESSAGE_SEND_URL= BASE_URL+"message/send?access_token=%s";
+    const MESSAGE_SEND_URL=self::BASE_URL."message/send?access_token=%s";
     //素材管理
     //https://open.work.weixin.qq.com/api/doc/90001/90143/90389
     //type 是 媒体文件类型，分别有图片（image）、语音（voice）、视频（video），普通文件（file）
-    const MEDIA_UPLOAD_URL = BASE_URL+"media/upload?access_token=%s&type=%s";
-    const MEDIA_UPLOADIMG_URL = BASE_URL+"media/uploadimg?access_token=%s";
-    const MEDIA_GET_URL = BASE_URL+"media/get?access_token=%s&media_id=%s";
-    const MEDIA_GET_JSSDK_URL = _base_url+"media/get/jssdk?access_token=%s&media_id=%s";
+    const MEDIA_UPLOAD_URL =self::BASE_URL."media/upload?access_token=%s&type=%s";
+    const MEDIA_UPLOADIMG_URL =self::BASE_URL."media/uploadimg?access_token=%s";
+    const MEDIA_GET_URL =self::BASE_URL."media/get?access_token=%s&media_id=%s";
+    const MEDIA_GET_JSSDK_URL = self::BASE_URL."media/get/jssdk?access_token=%s&media_id=%s";
     //审批
     //审批应用 https://work.weixin.qq.com/api/doc/90001/90143/91956
     const OA_COPY_TEMPLATE_URL ="oa/approval/copytemplate?access_token=%s";
@@ -57,7 +57,7 @@ class QywxThird
     const OA_APPLY_EVENT_URL = "oa/applyevent?access_token=%s";
     const OA_GET_APPROVAL_URL ="oa/getapprovaldetail?access_token=%s";
     //审批流程引擎 https://work.weixin.qq.com/api/doc/90001/90143/93798
-    const open_approval_data_url = _base_url+"corp/getopenapprovaldata?access_token=_access_token";
+    const open_approval_data_url = self::BASE_URL."corp/getopenapprovaldata?access_token=_access_token";
     // _h5应用
     //scope应用授权作用域。
     //snsapi_base：静默授权，可获取成员的基础信息（_user_id与_device_id）；
@@ -66,31 +66,31 @@ class QywxThird
     //https://work.weixin.qq.com/api/doc/90001/90143/91120
     const OAUTH_URL = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=%s&state=%s#wechat_redirect";
     //https://work.weixin.qq.com/api/doc/90001/90143/91121
-    const OAUTH_USER_URL = SERVICE_URL+"getuserinfo3rd?suite_access_token=%s&code=%s";
+    const OAUTH_USER_URL = self::SERVICE_URL."getuserinfo3rd?suite_access_token=%s&code=%s";
     //https://work.weixin.qq.com/api/doc/90001/90143/91122
-    const OAUTH_USER_DETAIL_URL = SERVICE_URL+"getuserdetail3rd?suite_access_token=%s";
+    const OAUTH_USER_DETAIL_URL = self::SERVICE_URL."getuserdetail3rd?suite_access_token=%s";
     //https://work.weixin.qq.com/api/doc/90001/90144/90539
-    const JSAPI_TICKET_URL = _base_url+"get_jsapi_ticket?access_token=%s";
+    const JSAPI_TICKET_URL = self::BASE_URL."get_jsapi_ticket?access_token=%s";
     //https://work.weixin.qq.com/api/doc/90001/90144/90539#%_e8%8_e%_b7%_e5%8_f%96%_e5%_ba%94%_e7%94%_a8%_e7%9_a%84jsapi_ticket
-    const JSAPI_TICKET_AGENT_URL = _base_url+"ticket/get?access_token=%s&type=agent_config";
+    const JSAPI_TICKET_AGENT_URL = self::BASE_URL."ticket/get?access_token=%s&type=agent_config";
     //家校沟通
     //https://open.work.weixin.qq.com/api/doc/90001/90143/92291
-    const EXT_CONTACT_MESSAGE_SEND_URL = _base_url+"externalcontact/message/send?access_token=%s";
+    const EXT_CONTACT_MESSAGE_SEND_URL = self::BASE_URL."externalcontact/message/send?access_token=%s";
     //此oauth与_h5oauth一致 https://work.weixin.qq.com/api/doc/90001/90143/91861
     const SCHOOL_OAUTH_URL = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=%s&state=%s#wechat_redirect";
     //https://work.weixin.qq.com/api/doc/90001/90143/91711
-    const SCHOOL_OAUTH_USER_URL = SERVICE_URL+"getuserinfo3rd?suite_access_token=%s&code=%s";
-    const school_url = _base_url+"school/";
+    const SCHOOL_OAUTH_USER_URL = self::SERVICE_URL."getuserinfo3rd?suite_access_token=%s&code=%s";
+    const SCHOOL_URL = self::BASE_URL."school/";
     //https://work.weixin.qq.com/api/doc/90001/90143/92038
-    const SCHOOL_USER_GET_URL = school_url+"user/get?access_token=%s&userid=%s";
+    const SCHOOL_USER_GET_URL = self::SCHOOL_URL."user/get?access_token=%s&userid=%s";
     //https://work.weixin.qq.com/api/doc/90001/90143/92299
-    const SCHOOL_DEPARTMENT_LIST_URL = school_url+"department/list?access_token=%s&id=%s";
+    const SCHOOL_DEPARTMENT_LIST_URL = self::SCHOOL_URL."department/list?access_token=%s&id=%s";
     //https://work.weixin.qq.com/api/doc/90001/90143/92043
-    const SCHOOL_USER_LIST_URL = school_url+"user/list?access_token=%s&department_id=%s&fetch_child=%s";
+    const SCHOOL_USER_LIST_URL = self::SCHOOL_URL."user/list?access_token=%s&department_id=%s&fetch_child=%s";
     //小程序应用
     //小程序登录流程 https://work.weixin.qq.com/api/doc/90001/90144/92427
     //code2_session https://work.weixin.qq.com/api/doc/90001/90144/92423
-    const CODE2SESSION_URL = SERVICE_URL+"miniprogram/jscode2session?suite_access_token=%s&js_code=%s&grant_type=authorization_code";
+    const CODE2SESSION_URL = self::SERVICE_URL."miniprogram/jscode2session?suite_access_token=%s&js_code=%s&grant_type=authorization_code";
 
 
     public function __construct($mchid, $appid, $appKey,$key)
@@ -156,7 +156,7 @@ class QywxThird
     {
         $buff = "";
         ksort($paraMap);
-        foreach ($para$as $k => $v) {
+        foreach ($paraMap as $k => $v) {
             if (null != $v && "null" != $v) {
                 if ($urlEncode) {
                     $v = urlencode($v);
@@ -193,62 +193,59 @@ class QywxThird
 //        $params$= new HashMap();
 //        paramsMap["suite_access_token",token);
         
-        $url = sprintf(self::PRE_AUTH_CODE_URL,token);
-        $response = self::curlGet(url);
+        $url = sprintf(self::PRE_AUTH_CODE_URL,$token);
+        $response = self::curlGet($url);
         //获取错误日志
-        if(response.("errcode") && $response["errcode"]!= 0){
-            logger.error(response.toString());
+        if($response["errcode"]!= 0){
+
         }else{
-            result = $response["pre_auth_code"];
-            //设置授权楝，对某次预授权码pre_auth_code进行授权类型设置
-            setSessionInfo(result);
+            $result = $response["pre_auth_code"];
+            //设置授权，对某次预授权码pre_auth_code进行授权类型设置
+            $this->setSessionInfo($result);
         }
-        return result;
+        return $result;
     }
 
 
     private function setSessionInfo($preAuthCode){
-        $token = getSuiteToken();
+        $token = $this->getSuiteToken();
         //如是测试授权，设置授权配置
-        //if(self::getAuthType() == 1){
-
-            JSONObject sessionInfo = new JSONObject();
-            sessionInfo["appid"]= new int[0]);
-            sessionInfo["auth_type"]=self::getAuthType());
-            $postJsonArr = new array();
-            $postJson["pre_auth_code"]=preAuthCode);
-            $postJson["session_info"]=sessionInfo);
-            logger.error(postJson.toString());
-            $sessionInfoUrl = sprintf(self::getSessionInfoUrl(),token);
-            $sessionResponse = RestUtils.post(sessionInfoUrl,postJson);
+        if($this->authType== 1){
+            $sessionInfo = Array();
+            $sessionInfo["appid"]= $this->appid;
+            $sessionInfo["auth_type"]= $this->authType;
+            $postJsonArr = Array();
+            $postJson["pre_auth_code"]= $preAuthCode;
+            $postJson["session_info"]=$sessionInfo;
+            $sessionInfoUrl = sprintf(self::SESSION_INFO_URL,$token);
+            $sessionResponse = self::curlPost($sessionInfoUrl,$postJson);
             //获取错误日志
-            if(sessionResponse.containsKey("errcode") && (Integer) sessionResponse["errcode") != 0){
-                logger.error(sessionResponse.toString());
+            if($sessionResponse["errcode"] != 0){
                 return false;
             }
-        //}
+        }
         return  true;
     }
 
     public function getInstallUrl($url){
-        $preAuthCode= getPreAuthCode();
-        $result = sprintf(self::getInstallUrl(),self::getSuiteId(),preAuthCode,url);
+        $preAuthCode= $this->getPreAuthCode();
+        $result = sprintf(self::INSTALL_URL,$this->suiteId,$preAuthCode,$url);
         return  $result;
     }
 
     public function getPermentCode($authCode){
         //通过auth code获取公司信息及永久授权码
 
-        $postJsonArr = new array();
+        $postJson = Array();
         $postJson["auth_code"]= $authCode;
-        $url = sprintf(self::getPermanentCodeUrl(),getSuiteToken());
-        $response = RestUtils.post(url,postJson);
+        $url = sprintf(self::PERMANENT_CODE_URL,$this->getSuiteToken());
+        $response = self::curlPost($url,$postJson);
         //获取错误日志
-        if(response.containsKey("errcode") && (Integer) response["errcode"] != 0){
-            logger.error(response.toString());
+        if($response["errcode"] != 0){
+
             return  false;
         }
-        logger.error(response.toString());
+
 
         //保存授权公司信息
         //https://open.work.weixin.qq.com/api/doc/90001/90143/90604
@@ -309,7 +306,7 @@ class QywxThird
         //获取agent
         $authInfo = $response["auth_info"];
         $agentList = $authInfo["agent"];
-        $agent = $agentList.get(0);
+        $agent = $agentList[0];
         $agentId = $agent["agentid"];
 
         QywxThirdCompany company = new QywxThirdCompany();
@@ -360,42 +357,42 @@ class QywxThird
     //**********************************  服务商相关   *************************//
     public function getProviderToken(){
 
-        $postJsonArr = new array();
+        $postJson = Array();
         $postJson["corpid"]=self::getCorpId();
-        $postJson["provider_secret"]=self::getProviderSecret();
+        $postJson["provider_secret"]=$this->providerSecret;
 
-        $url = self::getProviderTokenUlr();
-        $response= RestUtils.post(url,postJson);
+        $url = self::PROVIDER_TOKEN_ULR;
+        $response= self::curlPost($url,$postJson);
         //获取错误日志
-        if(response.containsKey("errcode") && $response["errcode"]!= 0){
-            logger.error(response.toString());
+        if($response["errcode"]!= 0){
+
         }
         $token =  $response["provider_access_token"];
-        return  token;
+        return  $token;
 
     }
 
     public function getRegisterCode(){
 
-        $url = sprintf(self::getRegisterCodeUrl(),getProviderToken()) ;
+        $url = sprintf(self::REGISTER_CODE_URL,$this->getProviderToken()) ;
 
-        $postJsonArr = new array();
-        $postJson["template_id"]=self::getTemplateId();
-        $postJson["state"]="lyx123456"];
+        $postJsonArr = Array();
+        $postJsonArr["template_id"]=self::getTemplateId();
+        $postJsonArr["state"]="lyx123456";
 
-        $response= RestUtils.post(url,postJson);
+        $response= self::curlPost($url,$postJsonArr);
         //获取错误日志
-        if(response.containsKey("errcode") && $response["errcode"]!= 0){
-            logger.error(response.toString());
+        if($response["errcode"]!= 0){
+
         }
         $token =  $response["register_code"];
-        return  token;
+        return  $token;
 
     }
 
     public function getRegisterUrl(){
-        $registerUrl = sprintf(self::getRegisterUrl(),getRegisterCode());
-        return  registerUrl;
+        $registerUrl = sprintf(self::getRegisterUrl(),$this->getRegisterCode());
+        return  $registerUrl;
     }
 
 
@@ -417,8 +414,8 @@ class QywxThird
     public function uploadContact($filePath){
 
         //https://open.work.weixin.qq.com/api/doc/90001/90143/91883
-        $providerToken = getProviderToken();
-        $url = sprintf(self::getContactUploadUrl(),providerToken,"file");
+        $providerToken = $this->getProviderToken();
+        $url = sprintf(self::CONTACT_UPLOAD_URL,$providerToken,"file");
 
         MultiValueMap<String, Object> params= new LinkedMultiValueMap<>();
         FileSystemResource resource = new FileSystemResource(new File(filePath));
@@ -447,17 +444,17 @@ class QywxThird
          *     "output_file_format": "pdf"
          * }
          */
-        $providerToken = getProviderToken();
-        $url = sprintf(self::getContactTransUrl(),$providerToken);
+        $providerToken = $this->getProviderToken();
+        $url = sprintf(self::CONTACT_TRANS_URL,$providerToken);
 
-        $postJsonArr = new array();
-        $postJson["auth_corpid"]=$corpId;
+        $postJsonArr = Array();
+        $postJsonArr["auth_corpid"]=$corpId;
 
-        $mediaList = new JSONArray();
-        mediaList.add(mediaId);
-        $postJson["media_id_list"]=$mediaList;
+        $mediaArr = Array();
+        $mediaArr[]= $mediaId;
+        $postJsonArr["media_id_list"]=$mediaArr;
 
-        return  RestUtils.post(url,postJson);
+        return  self::curlPost($url,$postJsonArr);
 
     }
 
@@ -482,11 +479,10 @@ class QywxThird
         /**
          * id
          */
-        $corpToken = getProviderToken();
-        $url = sprintf(self::getTransResultUrl(),$corpToken,$jobId);
+        $corpToken = $this->getProviderToken();
+        $url = sprintf(self::TRANS_RESULT_URL,$corpToken,$jobId);
         $rs = self::curlGet($url);
-        rs["rs_url"]=$rl;
-        return rs;
+        return $rs;
 
     }
 
@@ -494,12 +490,12 @@ class QywxThird
     //**********************************  客户联系相关   *************************//
     //获取配置了客户联系功能的成员列表
     public function getExtContactFollowUserList($corpId){
-        $corpToken = qywxThirdCompanyService.getCorpAccessToken($corpId);
-        $url = sprintf(self::getExtContactFollowUserListUrl(),$corpToken) ;
+        $corpToken = $this->getCorpAccessToken($corpId);
+        $url = sprintf(self::EXT_CONTACT_FOLLOW_USER_LIST_URL,$corpToken) ;
         $response= self::curlGet($url);
         //获取错误日志
-        if(response.containsKey("errcode") && $esponse["errcode"] != 0){
-            logger.error(response.toString());
+        if($response["errcode"] != 0){
+
         }
         return  $response;
 
@@ -508,13 +504,13 @@ class QywxThird
     //获取指定成员添加的客户列表
     public function getExtContactList($corpId,$userId){
 
-        $corpToken = qywxThirdCompanyService.getCorpAccessToken($corpId);
-        $url = sprintf(self::getExtContactListUrl(),$corpToken,$userId) ;
+        $corpToken = $this->getCorpAccessToken($corpId);
+        $url = sprintf(self::EXT_CONTACT_LIST_URL,$corpToken,$userId) ;
 
         $response= self::curlGet($url);
         //获取错误日志
-        if(response.containsKey("errcode") && $response["errcode"] != 0){
-            logger.error(response.toString());
+        if($response["errcode"] != 0){
+
         }
         return  $response;
 
@@ -525,17 +521,17 @@ class QywxThird
     public function getExtContactGroupchatList($corpId,$userId){
 
         //https://open.work.weixin.qq.com/api/doc/90001/90143/93414
-        $corpToken = qywxThirdCompanyService.getCorpAccessToken(corpId);
-        $url = sprintf(self::getExtContactGroupchatUrl(),corpToken) ;
+        $corpToken = $this->getCorpAccessToken($corpId);
+        $url = sprintf(self::EXT_CONTACT_GROUPCHAT_URL,$corpToken) ;
 
         //分页，预期请求的数据量，取值范围 1 ~ 1000  测试写死1000
-        $postJsonArr = new array();
+        $postJsonArr = Array();
         //owner_filter  userid_list	否	用户ID列表。最多100个
-        $postJson["limit"]=1000;
-        $response= RestUtils.post(url,postJson);
+        $postJsonArr["limit"]=1000;
+        $response= self::curlPost($url,$postJsonArr);
         //获取错误日志
-        if(response.containsKey("errcode") && $response["errcode"]!= 0){
-            logger.error(response.toString());
+        if($response["errcode"]!= 0){
+
         }
         return  $response;
 
@@ -545,35 +541,33 @@ class QywxThird
     //**********************************  消息相关   *************************//
     //消息推送
     //发送消息
-    public function sendMessageText($corpId,$userId,$text){
+    public function sendMessageText($corpId,$corpAgentId,$userId,$text){
 
         //https://open.work.weixin.qq.com/api/doc/90001/90143/93414
-        $corpToken = qywxThirdCompanyService.getCorpAccessToken(corpId);
+        $corpToken = $this->getCorpAccessToken($corpId);
 
-        $url = sprintf(self::getMessageSendUrl(),corpToken) ;
-        //获取企业的agentid
-        QywxThirdCompany company =  qywxThirdCompanyService.getCompanyByCorpId(corpId);
-        $agentId = $company.getAgentId();
+        $url = sprintf(self::MESSAGE_SEND_URL,$corpToken) ;
 
-        $postJsonArr = new array();
-        $postJson["msgtype"]="text";
-        $postJson["agentid"]=$agentId;
+        $agentId = $corpAgentId;
+        $postJsonArr = Array();
+        $postJsonArr["msgtype"]="text";
+        $postJsonArr["agentid"]=$agentId;
 
-        $testJson =  new JSONObject();
+        $testJson =   Array();
         $testJson["content"]=$text;
         $postJson["text"]=$testJson;
 
-        $postJson["touser"]=$userId;
-        $response= RestUtils.post(url,postJson);
+        $postJsonArr["touser"]=$userId;
+        $response= self::curlPost($url,$postJsonArr);
         //获取错误日志
-        if(response.containsKey("errcode") && $response["errcode"]!= 0){
-            logger.error(response.toString());
+        if($response["errcode"]!= 0){
+
         }
         return  $response;
 
     }
 
-    public  $replyMessage(){
+    public function replyMessage(){
 
 //        XStream xstream = new XStream();
 //              '<xml>
@@ -587,7 +581,7 @@ class QywxThird
 
 
     //**********************************  素材管理相关   *************************//
-    public  byte[] downloadMedia($corpId,$mediaId){
+    public  function downloadMedia($corpId,$mediaId){
         $corpToken = qywxThirdCompanyService.getCorpAccessToken(corpId);
         $mediaDownloadUrl = sprintf(self::getMediaGetUrl(),corpToken,mediaId);
         return RestUtils.dowload(mediaDownloadUrl);
@@ -598,18 +592,18 @@ class QywxThird
 
     //审批流程引擎
     public function getApprovalFlow(){
-        $approval = new HashMap();
-        approval["templateId"]=self::getApprovalFlowId();
-        approval["thirdNo"]=new SnowFlakeUtils(0, 0).createOrderNo());
-        return approval;
+        $approval = Array();
+        $approval["templateId"]= $this->approvalFlowId;
+        $approval["thirdNo"]=new SnowFlakeUtils(0, 0).createOrderNo());
+        return $approval;
     }
 
     public function getApprovalFlowStatus($corpId,$thirdNo){
-        $corpToken = qywxThirdCompanyService.getCorpAccessToken($corpId);
-        $approvalUrl = sprintf(self::getOpenApprovalDataUrl(),$corpToken);
-        $postJsonArr = new array();
-        $postJson["thirdNo"]=$thirdNo;
-        return RestUtils.post(approvalUrl,postJson);
+        $corpToken = $this->getCorpAccessToken($corpId);
+        $approvalUrl = sprintf(self::OA_GET_APPROVAL_URL(),$corpToken);
+        $postJsonArr = Array();
+        $postJsonArr["thirdNo"]=$thirdNo;
+        return self::curlPost($approvalUrl,$postJsonArr);
     }
 
     //**********************************  PC相关   *************************//
@@ -617,23 +611,22 @@ class QywxThird
     //https://open.work.weixin.qq.com/wwopen/sso/3rd_qrConnect?appid=ww100000a5f2191&redirect_uri=http%3A%2F%2Fwww.oa.com&state=web_login@gyoss9&usertype=admin
     public function getSsoUrl($redirectUrl,$userType){
         $state = "test";
-        $ssoUrl = sprintf(self::getSsoAuthUrl(),self::getCorpId(),$redirectUrl,$state,$userType);
-        return ssoUrl;
+        $ssoUrl = sprintf(self::SSO_AUTH_URL,$this->corpId,$redirectUrl,$state,$userType);
+        return $ssoUrl;
     }
 
     public function getLoginInfo($authCode){
+        $providerToken = $this->getProviderToken();
+        $url = sprintf(self::LOGIN_INFO_URL,$providerToken);
 
-        $url = sprintf(self::getLoginInfoUrl(),getProviderToken()) ;
-
-        $postJsonArr = new array();
-        $postJson["auth_code"]=$authCode;
-        $response= RestUtils.post($url,$postJson);
+        $postJsonArr = Array();
+        $postJsonArr["auth_code"]=$authCode;
+        $response= self::curlPost($url,$postJsonArr);
         //获取错误日志
-        if(response.containsKey("errcode") && $response["errcode"]!= 0){
-            logger.error(response.toString());
+        if($response["errcode"]!= 0){
+
         }
         return  $response;
-
     }
 
 
@@ -645,13 +638,13 @@ class QywxThird
 //        snsapi_privateinfo：手动授权，可获取成员的详细信息，包含手机、邮箱等敏感信息（已不再支持获取手机号/邮箱）。
         $scope = "snsapi_userinfo";
         $state = "sdfds343";
-        $result = sprintf(self::getOauthUrl(),self::getSuiteId(),url,scope,state);
+        $result = sprintf(self::OAUTH_URL(),$this->getSuitAccessToken(),$url,$scope,$state);
         return  $result;
     }
 
     public function getOauthUser($code) {
 
-        $suiteToken = getSuiteToken();
+        $suiteToken = $this->getSuiteToken();
 
         //获取访问用户身份
 
@@ -682,22 +675,21 @@ class QywxThird
 //
 
         //方法三
-        $getOauthUrl = sprintf(self::getOauthUserUrl(),suiteToken,code);
-        $response = self::curlGet(getOauthUrl);
-        if(response.containsKey("errcode") && $response["errcode"]!= 0){
-            logger.error(response.toString());
+        $getOauthUrl = sprintf(self::OAUTH_USER_URL,$suiteToken,$code);
+        $response = self::curlGet($getOauthUrl);
+        if( $response["errcode"]!= 0){
             return  $response;
         }
 
         $userTicket = $response["user_ticket"];
         //获取访问用户敏感信息
-        $postJsonArr = new array();
-        $postJson["user_ticket"]=userTicket;
-        $url = sprintf(self::getOauthUserDetailUrl(),suiteToken);
-        $detaiResponse = RestUtils.post(url,postJson);
+        $postJsonArr = Array();
+        $postJson["user_ticket"]=$userTicket;
+        $url = sprintf(self::OAUTH_USER_DETAIL_URL,$suiteToken);
+        $detaiResponse = self::curlPost($url,$postJson);
         //获取错误日志
-        if(detaiResponse.containsKey("errcode") && (Integer) detaiResponse["errcode") != 0){
-            logger.error(detaiResponse.toString());
+        if($detaiResponse["errcode"] != 0){
+
         }
         /**
          * {
@@ -713,13 +705,13 @@ class QywxThird
          * }
          */
 
-        return detaiResponse;
+        return $detaiResponse;
 
     }
 
 
 
-    public function  getJsSignAgent($corpId,$nonce, $timestamp,  $signUrl) throws  Exception{
+    public function getJsSignAgent($corpId,$nonce, $timestamp,  $signUrl){
         //https://work.weixin.qq.com/api/doc/90001/90144/90548
         //https://work.weixin.qq.com/api/doc/90001/90144/90539#%E8%8E%B7%E5%8F%96%E5%BA%94%E7%94%A8%E7%9A%84jsapi_ticket
 
@@ -750,7 +742,7 @@ class QywxThird
     }
 
     //******************************  家校沟通   *********************//
-    public  $getSchoolOauthUrl($url){
+    public function getSchoolOauthUrl($url){
 
 //        应用授权作用域。
 //        snsapi_base：静默授权，可获取成员的基础信息（UserId与DeviceId）；
@@ -764,12 +756,11 @@ class QywxThird
 
     public function getSchoolOauthUser($code) {
 
-        $suiteToken = getSuiteToken();
+        $suiteToken = $this->getSuiteToken();
         //获取访问用户身份
-        $getOauthUrl = sprintf(self::getSchoolOauthUserUrl(),suiteToken,code);
-        $response = self::curlGet(getOauthUrl);
-        if(response.containsKey("errcode") && $response["errcode"]!= 0){
-            logger.error(response.toString());
+        $getOauthUrl = sprintf(self::SCHOOL_OAUTH_USER_URL,$suiteToken,$code);
+        $response = self::curlGet($getOauthUrl);
+        if( $response["errcode"]!= 0){
             return  $response;
         }
 
@@ -791,26 +782,26 @@ class QywxThird
             $userId = $parentsMap["parent_userid"];
             //获取访问用户敏感信息
             //https://work.weixin.qq.com/api/doc/90001/90143/92038
-            $url = sprintf(self::getSchoolUserGetUrl(),corpToken,userId);
-             detaiResponse = self::curlGet(url);
+            $url = sprintf(self::SCHOOL_USER_GET_URL,corpToken,userId);
+            $detaiResponse = self::curlGet(url);
             //获取错误日志
-            if(detaiResponse.containsKey("errcode") && (Integer) detaiResponse["errcode") != 0){
-                logger.error(detaiResponse.toString());
+            if($detaiResponse["errcode"] != 0){
+
             }
 
         }else{
           //公司成员
             $userTicket = $response["user_ticket"];
             //获取访问用户敏感信息
-            $postJsonArr = new array();
-            $postJson["user_ticket"]=userTicket;
-            $url = sprintf(self::getOauthUserDetailUrl(),suiteToken);
-             detaiResponse = RestUtils.post(url,postJson);
+            $postJsonArr = Array();
+            $postJsonArr["user_ticket"]=$userTicket;
+            $url = sprintf(self::OAUTH_USER_DETAIL_URL,$suiteToken);
+            $detaiResponse = self::curlPost($url,$postJsonArr);
             //获取错误日志
-            if(detaiResponse.containsKey("errcode") && (Integer) detaiResponse["errcode") != 0){
-                logger.error(detaiResponse.toString());
+            if($detaiResponse["errcode"] != 0){
+
             }
-            detaiResponse["user_type"]=0;
+            $detaiResponse["user_type"]=0;
         }
 
 
@@ -865,52 +856,49 @@ class QywxThird
     }
 
     public function getSchoolDepartmentList($corpId,$deptId){
-        $corpToken = qywxThirdCompanyService.getCorpAccessToken(corpId);
-        $url = sprintf(self::getSchoolDepartmentListUrl(),corpToken,deptId) ;
+        $corpToken = $this->getCorpAccessToken($corpId);
+        $url = sprintf(self::SCHOOL_DEPARTMENT_LIST_URL,$corpToken,$deptId) ;
 
-        $response= self::curlGet(url);
+        $response= self::curlGet($url);
         //获取错误日志
-        if(response.containsKey("errcode") && $response["errcode"]!= 0){
-            logger.error(response.toString());
+        if($response["errcode"]!= 0){
         }
         return  $response;
     }
 
     public function getSchoolUserList($corpId,$deptId,$fetchChild){
-        $corpToken = qywxThirdCompanyService.getCorpAccessToken(corpId);
-        $url = sprintf(self::getSchoolUserListUrl(),corpToken,deptId,fetchChild) ;
+        $corpToken = $this->getCorpAccessToken($corpId);
+        $url = sprintf(self::SCHOOL_USER_LIST_URL,$corpToken,$deptId,$fetchChild) ;
 
-        $response= self::curlGet(url);
+        $response= self::curlGet($url);
         //获取错误日志
-        if(response.containsKey("errcode") && $response["errcode"]!= 0){
-            logger.error(response.toString());
+        if($response["errcode"]!= 0){
+
         }
         return  $response;
 
     }
 
-    public function extContactMessageSend($corpId,$studentUserid,$text){
+    public function extContactMessageSend($corpId,$corpAgentId,$studentUserid,$text){
 
-        $corpToken = qywxThirdCompanyService.getCorpAccessToken(corpId);
-        $url = sprintf(self::getExtContactMessageSendUrl(),corpToken) ;
+        $corpToken = $this->getCorpAccessToken(corpId);
+        $url = sprintf(self::EXT_CONTACT_MESSAGE_SEND_URL,corpToken) ;
 
-        //获取企业的agentid
-        QywxThirdCompany company =  qywxThirdCompanyService.getCompanyByCorpId(corpId);
-        $agentId = company.getAgentId();
+        $agentId = $corpAgentId;
 
-        $postJsonArr = new array();
+        $postJsonArr = Array();
         $postJson["msgtype"]="text";
-        $postJson["agentid"]=agentId;
-        $postJson["to_student_userid"]=studentUserid;
+        $postJson["agentid"]=$agentId;
+        $postJson["to_student_userid"]=$studentUserid;
 
-        JSONObject testJson =  new JSONObject();
-        testJson["content"]=text;
-        $postJson["text"]=testJson;
+        $testJson =  Array();
+        $testJson["content"]=$text;
+        $postJson["text"]=$testJson;
 
-        $response= RestUtils.post(url,postJson);
+        $response= self::curlPost($url,$postJson);
         //获取错误日志
-        if(response.containsKey("errcode") && $response["errcode"]!= 0){
-            logger.error(response.toString());
+        if($response["errcode"]!= 0){
+
         }
         return  $response;
 
@@ -918,16 +906,17 @@ class QywxThird
 
     //******************************  小程序应用   *********************//
     public function getCode2sessionUser($code){
-        $suiteToken = getSuiteToken();
+        $suiteToken = $this->getSuiteToken();
         //获取访问用户身份
 //        $params$= new HashMap();
 //        paramsMap["suite_access_token",suiteToken);
 //        paramsMap["code",code);
-        $url = sprintf(self::getCode2sessionUrl(),suiteToken,code);
-        $response = self::curlGet(url);
+
+        $url = sprintf(self::CODE2SESSION_URL,$suiteToken,$code);
+        $response = self::curlGet($url);
         //获取错误日志
-        if(response.containsKey("errcode") && $response["errcode"]!= 0){
-            logger.error(response.toString());
+        if($response["errcode"]!= 0){
+
         }
         return  $response;
     }
