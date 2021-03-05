@@ -1,26 +1,44 @@
+#其它
 .idea/
-
-
 /vendor/
 node_modules/
-npm-debug.log
-yarn-error.log
+
 
 # Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
+/laravel-demo/bootstrap/compiled.php
+/laravel-demo/app/storage/
 
 # Laravel 5 & Lumen specific
-public/storage
-public/hot
+/laravel-demo/public/storage
+/laravel-demo/public/hot
 
 # Laravel 5 & Lumen specific with changed public path
-public_html/storage
-public_html/hot
+/laravel-demo/public_html/storage
+/laravel-demo/public_html/hot
 
+/laravel-demo/vendor
+
+npm-debug.log
+yarn-error.log
 storage/*.key
 .env
+.env.backup
 Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+docker-compose.override.yml
+
+
+# thinkphp
+/.idea
+/.vscode
+/thinkphp-demo/vendor
+*.log
+.env
+.DS_Store
+thinkphp
+
+
+
+
